@@ -71,7 +71,7 @@ public class PointlessClass {
 print("Hello, World")
 ```
 
---- 
+---
 
 ## What's changed in 44 years?
 
@@ -254,7 +254,7 @@ In Java, this function might return -1 or null if nothing is found...
 
 ## How do we represent "No Value"?
 
-`null` isn't safe; we might try using it wherever we expect an Int 
+`null` isn't safe; we might try using it wherever we expect an Int
 
 But -1 could sometimes be a valid value.
 
@@ -380,7 +380,6 @@ switch legCount {
     print("Lots of legs")
 }
 ```
-Can you spot the bug?
 
 ---
 
@@ -409,7 +408,7 @@ func sayHello(name: String = "World") {
     print("Hello \(name)")
 }
 
-sayHello() 
+sayHello()
 sayHello("Class")
 ```
 
@@ -581,7 +580,7 @@ let greetingPrinter : () -> () = {
     print("Hello World")
 }
 
-func greetingPrinter() -> () { 
+func greetingPrinter() -> () {
     print("Hello World")
 }
 ```
@@ -633,7 +632,7 @@ No required base class. Swift doesn't have a universal base class.
 
 ```swift
 class Bicycle: Vehicle { //Inheritance
-    
+
 }
 ```
 
