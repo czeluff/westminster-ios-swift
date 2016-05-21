@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="825-3Y-1jh">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Posts From Reddit-->
+        <scene sceneID="MiQ-iB-R54">
+            <objects>
+                <tableViewController id="QtF-My-5cQ" customClass="PostsTableViewController" customModule="RedditPosts" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0A6-WR-NiR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCellIdentifier" textLabel="o6A-Bz-Wef" style="IBUITableViewCellStyleDefault" id="nOJ-aT-28L">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nOJ-aT-28L" id="dbW-Jd-aHo">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o6A-Bz-Wef">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xmU-ON-E4K" kind="show" id="3e2-Ds-L3P"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QtF-My-5cQ" id="RIB-JF-qR8"/>
+                            <outlet property="delegate" destination="QtF-My-5cQ" id="do1-Lg-gjo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Posts From Reddit" id="am5-IH-cb4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="9pg-xj-n2E">
+                            <connections>
+                                <action selector="refresh:" destination="QtF-My-5cQ" id="RG1-L5-CXk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zr9-uh-zg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="862" y="400"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="IBw-SI-ib6">
+            <objects>
+                <viewController id="xmU-ON-E4K" customClass="WebViewController" customModule="RedditPosts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jlA-aW-HLr"/>
+                        <viewControllerLayoutGuide type="bottom" id="PSq-rE-URK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2kq-vI-DaX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dik-75-xGy">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dik-75-xGy" firstAttribute="top" secondItem="jlA-aW-HLr" secondAttribute="bottom" id="CBw-wy-Snv"/>
+                            <constraint firstAttribute="trailing" secondItem="Dik-75-xGy" secondAttribute="trailing" id="EWZ-QI-vST"/>
+                            <constraint firstItem="Dik-75-xGy" firstAttribute="leading" secondItem="2kq-vI-DaX" secondAttribute="leading" id="FN9-GX-Q37"/>
+                            <constraint firstItem="Dik-75-xGy" firstAttribute="bottom" secondItem="PSq-rE-URK" secondAttribute="top" id="cs5-IT-jAN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Dik-75-xGy" id="tLH-4O-DAQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Xa-dp-6PV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562" y="400"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KU5-3q-mhS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="825-3Y-1jh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fe3-c0-Qm7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QtF-My-5cQ" kind="relationship" relationship="rootViewController" id="Gwn-zO-xVq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="553-1j-Clf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="186" y="395"/>
+        </scene>
+    </scenes>
+</document>
