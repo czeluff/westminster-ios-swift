@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animations" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9yW-xw-ozj">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="CMR-vF-3Kc"/>
+                                    <constraint firstAttribute="width" constant="240" id="azE-l3-cYY"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwL-4h-mMf">
+                                <rect key="frame" x="433" y="28" width="147" height="30"/>
+                                <state key="normal" title="Move With Transform"/>
+                                <connections>
+                                    <action selector="moveRedView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z44-ND-2rd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d15-d3-vgO">
+                                <rect key="frame" x="20" y="20" width="156" height="30"/>
+                                <state key="normal" title="Move With Constraints"/>
+                                <connections>
+                                    <action selector="moveWithConstraints:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H5N-7Y-uNB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9yW-xw-ozj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X45-z4-NCG"/>
+                            <constraint firstItem="9yW-xw-ozj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bKi-uA-Q7L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XwL-4h-mMf" secondAttribute="trailing" id="kv4-ip-52y"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="d15-d3-vgO" secondAttribute="leading" id="np2-N3-G9X"/>
+                            <constraint firstItem="d15-d3-vgO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rzW-fq-HXc"/>
+                            <constraint firstItem="XwL-4h-mMf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="uQK-My-XBe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="redCenterYConstraint" destination="bKi-uA-Q7L" id="QC5-pc-7QE"/>
+                        <outlet property="redView" destination="9yW-xw-ozj" id="3eJ-zh-wnY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
